@@ -1,0 +1,23 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+---
+
+<ul>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a
+          href={getRelativeLocaleUrl(lang, "/")}
+          class={lang === currentLang ? "font-bold underline" : ""}
+          aria-current={lang === currentLang ? "page" : undefined}
+        >
+          {label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
