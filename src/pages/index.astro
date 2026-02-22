@@ -2,12 +2,16 @@
 import Layout from "@/layouts/main.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Hero from "@/sections/hero.astro";
+import Clients from "@/sections/clients.astro";
+import Testimonial from "@/sections/testimonial.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <Layout content={{ title: t("home.title") }}>
   <Hero />
+  <Clients />
+  <Testimonial />
   <div class="container mx-auto h-screen px-4 py-2">
     <h2 class="text-2xl font-bold">Våra tjänster</h2>
   </div>

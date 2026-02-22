@@ -13,8 +13,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div
-  class="border-border relative m-4 h-[calc(100vh-2rem)] overflow-hidden rounded-2xl border"
+<section
+  class="border-border relative h-[calc(100vh-2rem)] overflow-hidden rounded-2xl border md:m-4"
 >
   <BackgroundGradient client:load>
     <div class="flex h-full flex-col">
@@ -66,4 +66,4 @@ const t = useTranslations(lang);
       </div>
     </div>
   </BackgroundGradient>
-</div>
+</section>
