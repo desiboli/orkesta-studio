@@ -1,0 +1,69 @@
+---
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "@/components/ui/scroll-velocity-container";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text.astro";
+import { Button } from "@/components/ui/button";
+import { MoveRightIcon } from "lucide-react";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  class="border-border relative m-4 h-[calc(100vh-2rem)] overflow-hidden rounded-2xl border"
+>
+  <BackgroundGradient client:load>
+    <div class="flex h-full flex-col">
+      <div
+        class="mx-auto flex h-full max-w-5xl flex-col items-center justify-center p-4 md:p-10"
+      >
+        <div class="border-border bg-primary/5 rounded-full border px-4 py-0.5">
+          <AnimatedShinyText class="text-[0.605rem] md:text-xs">
+            ✨ Teknisk partner för affärskritiska system.
+          </AnimatedShinyText>
+        </div>
+
+        <div class="mt-10">
+          <h1
+            class="font-display text-center text-[clamp(1.125rem,1.5rem+4vw,6rem)] leading-none font-bold tracking-tighter"
+          >
+            {t("hero.title")}
+          </h1>
+          <p
+            class="mt-4 text-center font-sans text-[clamp(1rem,1rem+1vw,2rem)] font-light"
+          >
+            {t("hero.description")}
+          </p>
+        </div>
+
+        <div class="mt-20 flex flex-col gap-4 md:flex-row">
+          <Button size="lg">Boka startmöte</Button>
+          <Button variant="outline" size="lg"
+            >Se våra lösningar <MoveRightIcon className="size-4" /></Button
+          >
+        </div>
+      </div>
+
+      <div class="">
+        <ScrollVelocityContainer
+          client:load
+          className="text-foreground/10 z-10 text-4xl leading-relaxed font-bold md:text-7xl"
+        >
+          <ScrollVelocityRow client:load baseVelocity={2} direction={1}>
+            <span>Mordenisering</span>
+            <span>·</span>
+            <span>Integrationer</span>
+            <span>·</span>
+            <span>AI</span>
+            <span>·</span>
+            <span>Förvaltning</span>
+          </ScrollVelocityRow>
+        </ScrollVelocityContainer>
+      </div>
+    </div>
+  </BackgroundGradient>
+</div>

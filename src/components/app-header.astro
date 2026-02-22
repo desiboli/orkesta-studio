@@ -1,0 +1,58 @@
+---
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+const links = [
+  { href: "/", label: "Hem" },
+  { href: "/solutions", label: "Lösningar" },
+  { href: "/cases", label: "Case" },
+  { href: "/prices", label: "Priser" },
+  { href: "/about", label: "Om oss" },
+];
+---
+
+<header id="app-header" class="group fixed top-4 right-0 left-0 z-50 px-10">
+  <div
+    class="group-data-scrolled:bg-background/80 mx-auto flex w-full items-center justify-between rounded-2xl bg-transparent p-4 transition-all duration-800 ease-out group-data-scrolled:w-6/12 group-data-scrolled:rounded-2xl group-data-scrolled:shadow-lg group-data-scrolled:backdrop-blur-md md:grid md:grid-cols-[1fr_auto_1fr] dark:group-data-scrolled:shadow-[0_0_24px_rgba(0,0,0,0.2),0_0_0_1px_rgba(255,255,255,0.05)]"
+  >
+    <div class="flex w-full items-center justify-between">
+      <a href="/" class="font-display font-medium uppercase">Orkesta®</a>
+    </div>
+
+    <nav class="hidden md:block">
+      <ul class="group/nav flex items-center gap-4">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="transition-opacity duration-300 group-hover/nav:opacity-50 hover:opacity-100!"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center justify-end gap-2">
+      <a
+        href="/contact"
+        class={cn(buttonVariants({ variant: "default" }), "border-none")}
+      >
+        Boka startmöte
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("app-header");
+  const onScroll = () => {
+    if (header) {
+      header.toggleAttribute("data-scrolled", window.scrollY > 100);
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

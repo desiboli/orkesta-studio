@@ -1,6 +1,9 @@
 ---
+import "../styles/global.css";
 import LanguagePicker from "@/components/language-picker.astro";
 import { getLangFromUrl } from "@/i18n/utils";
+import TailwindIndicator from "@/components/tailwind-indicator.astro";
+import AppHeader from "@/components/app-header.astro";
 const lang = getLangFromUrl(Astro.url);
 const { content, frontmatter } = Astro.props;
 const title = content?.title ?? frontmatter?.title ?? "Orkesta";
@@ -16,9 +19,11 @@ const title = content?.title ?? frontmatter?.title ?? "Orkesta";
     <title>{title}</title>
   </head>
   <body>
+    <AppHeader />
     <slot />
     <footer>
       <LanguagePicker />
     </footer>
+    <TailwindIndicator />
   </body>
 </html>
