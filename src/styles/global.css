@@ -156,7 +156,7 @@
     rgba(180, 200, 120, 0.15) 0%,
     transparent 70%
   );
-  --gradient-noise-opacity: 0.09;
+  --gradient-noise-opacity: 0.2;
 }
 
 .dark {
@@ -222,7 +222,7 @@
     rgba(153, 69, 255, 0.3) 0%,
     transparent 70%
   );
-  --gradient-noise-opacity: 0.2;
+  --gradient-noise-opacity: 0.25;
 }
 
 @layer base {
