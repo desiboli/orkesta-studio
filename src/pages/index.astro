@@ -4,6 +4,10 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Hero from "@/sections/hero.astro";
 import Clients from "@/sections/clients.astro";
 import Testimonial from "@/sections/testimonial.astro";
+import Problems from "@/sections/problems.astro";
+import Strategy from "@/sections/strategy.astro";
+import Development from "@/sections/development.astro";
+import AI from "@/sections/ai.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -12,6 +16,10 @@ const t = useTranslations(lang);
   <Hero />
   <Clients />
   <Testimonial />
+  <Problems />
+  <Strategy />
+  <Development />
+  <AI />
   <div class="container mx-auto h-screen px-4 py-2">
     <h2 class="text-2xl font-bold">Våra tjänster</h2>
   </div>
