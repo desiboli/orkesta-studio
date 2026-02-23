@@ -1,0 +1,29 @@
+---
+import LogosMarquee from "@/components/logos-marquee.astro";
+---
+
+<section class="md:m-4">
+  <div class="bg-primary py-20 md:rounded-2xl">
+    <div class="container mx-auto">
+      <div
+        class="flex max-w-2xl shrink-0 flex-col justify-center gap-6 px-4 2xl:max-w-4xl"
+      >
+        <h2 class="text-primary-foreground text-xl font-light md:text-2xl">
+          Företag vi har arbetat med
+        </h2>
+        <h3
+          class="font-display text-primary-foreground text-4xl leading-snug md:text-5xl"
+        >
+          Vi arbetar långsiktigt med företag som värdesätter struktur, kvalitet
+          och resultat.
+        </h3>
+      </div>
+
+      <div
+        class="mt-20 min-w-0 flex-1 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+      >
+        <LogosMarquee />
+      </div>
+    </div>
+  </div>
+</section>

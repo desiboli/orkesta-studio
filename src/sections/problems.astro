@@ -1,0 +1,62 @@
+---
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "@/components/ui/scroll-velocity-container";
+import { Button } from "@/components/ui/button";
+---
+
+<section class="md:m-4">
+  <div class="bg-primary py-20 md:rounded-2xl">
+    <div class="container mx-auto">
+      <div
+        class="text-primary-foreground flex max-w-2xl shrink-0 flex-col justify-center gap-4 px-4 2xl:max-w-4xl"
+      >
+        <h2
+          class="font-display text-2xl leading-tight font-bold md:text-4xl lg:text-6xl"
+        >
+          Känner du igen dig?
+        </h2>
+        <h3 class="text-xl leading-snug font-light md:text-2xl lg:text-4xl">
+          Många svenska företag sitter fast i lösningar som inte skapar
+          affärsvärde.
+        </h3>
+      </div>
+    </div>
+
+    <div
+      class="mt-20 min-w-0 flex-1 mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+    >
+      <ScrollVelocityContainer
+        client:load
+        className="text-primary-foreground z-10 text-4xl leading-relaxed font-bold md:text-7xl"
+      >
+        <ScrollVelocityRow client:load baseVelocity={2} direction={1}>
+          <span>🤯 AI känns diffust och svårt att förstå</span>
+          <span>😩 Manuella processer tar onödig tid</span>
+          <span>😭 Hemsidan känns gammal och otydlig</span>
+          <span>🤷‍♂️ Byråer levererar – men inget förändras</span>
+        </ScrollVelocityRow>
+
+        <ScrollVelocityRow client:load baseVelocity={2} direction={-1}>
+          <span>🤯 AI känns diffust och svårt att förstå</span>
+          <span>😩 Manuella processer tar onödig tid</span>
+          <span>😭 Hemsidan känns gammal och otydlig</span>
+          <span>🤷‍♂️ Byråer levererar – men inget förändras</span>
+        </ScrollVelocityRow>
+      </ScrollVelocityContainer>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <div
+        class="mt-20 flex flex-row items-center justify-between gap-6 rounded-2xl bg-white/10 p-10 shadow-lg"
+      >
+        <h2 class="text-primary-foreground text-4xl font-bold md:text-4xl">
+          Det behöver inte vara så.
+        </h2>
+
+        <Button size="lg">Se våra lösningar</Button>
+      </div>
+    </div>
+  </div>
+</section>

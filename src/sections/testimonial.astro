@@ -1,0 +1,61 @@
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section class="md:m-4">
+  <div class="bg-brand-lime/60 px-4 py-20 md:rounded-2xl">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-center md:gap-20">
+        <Image
+          src="/erik.png"
+          alt="Erik Lydecker"
+          width={80}
+          height={80}
+          class="hidden size-2/6 rounded-lg md:block"
+        />
+
+        <div>
+          <svg
+            width="80"
+            height="80"
+            class="stroke-primary text-primary"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20 5H4V19H20V5ZM4 3C2.89543 3 2 3.89543 2 5V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V5C22 3.89543 21.1046 3 20 3H4Z"
+              fill="currentColor"></path>
+            <path
+              d="M9.06723 9.19629H12.0672L9.93267 14.8038H6.93267L9.06723 9.19629Z"
+              fill="currentColor"></path>
+            <path
+              d="M14.0672 9.19629H17.0672L14.9327 14.8038H11.9327L14.0672 9.19629Z"
+              fill="currentColor"></path>
+          </svg>
+          <h2
+            class="font-display text-foreground mt-4 text-2xl leading-tight font-bold md:text-4xl lg:text-6xl"
+          >
+            “Orkesta Studio hjälpte oss modernisera vår digitala närvaro och
+            effektivisera interna processer. Resultatet märktes direkt.”
+          </h2>
+          <div class="mt-6 flex items-center gap-6">
+            <Image
+              src="/erik.png"
+              alt="Erik Lydecker"
+              width={40}
+              height={40}
+              class="block size-20 rounded-lg md:hidden"
+            />
+            <div class="flex flex-col">
+              <p class="font-medium">Erik Lydecker</p>
+              <p class="font-light">Founder & CEO of Signal by Noise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

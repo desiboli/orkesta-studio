@@ -1,0 +1,35 @@
+---
+import logo360 from "@/assets/logoipsum-360.svg?raw";
+import logo391 from "@/assets/logoipsum-391.svg?raw";
+import logo414 from "@/assets/logoipsum-414.svg?raw";
+import logo416 from "@/assets/logoipsum-416.svg?raw";
+import logo418 from "@/assets/logoipsum-418.svg?raw";
+
+const logos = [
+  { id: 1, svg: logo360, alt: "Logo 1" },
+  { id: 2, svg: logo391, alt: "Logo 2" },
+  { id: 3, svg: logo414, alt: "Logo 3" },
+  { id: 4, svg: logo416, alt: "Logo 4" },
+  { id: 5, svg: logo418, alt: "Logo 5" },
+];
+---
+
+<div class="group relative max-w-full overflow-hidden">
+  <div class="flex">
+    {
+      [0, 1, 2, 3, 4].map(() => (
+        <div class="animate-marquee group-hover:paused flex shrink-0 items-center">
+          {logos.map((logo) => (
+            <figure
+              class="text-foreground relative h-20 w-64 shrink-0 cursor-pointer overflow-hidden px-10 py-4 [&>svg]:h-full [&>svg]:w-full [&>svg]:object-contain"
+              role="img"
+              aria-label={logo.alt}
+            >
+              <Fragment set:html={logo.svg} />
+            </figure>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>
